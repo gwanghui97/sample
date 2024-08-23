@@ -39,11 +39,11 @@ public class Board extends Auditable {
     @OneToMany(mappedBy = "board")
     private List<Likes> likes = new ArrayList<>();
 
-    @Column
-    private int likesCount;
+    @Column(nullable = false)
+    private Integer likesCount = 0;
 
-    @Column
-    private int viewCount;
+    @Column(nullable = false)
+    private Integer viewCount = 0;
 
     @Column
     @Enumerated(value = EnumType.STRING)

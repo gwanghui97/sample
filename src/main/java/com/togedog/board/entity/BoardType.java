@@ -1,5 +1,6 @@
 package com.togedog.board.entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -15,5 +16,10 @@ public enum BoardType {
 
     @Getter
     private String boardDescription;
+
+    @JsonCreator
+    public static BoardType from(String value) {
+        return BoardType.valueOf(value.toUpperCase());
+    }
 
 }

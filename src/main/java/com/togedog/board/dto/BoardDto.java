@@ -27,8 +27,6 @@ public class BoardDto{
         private String contentImg;
 
         private BoardType boardType;
-
-        private long memberId;
     }
 
     @Getter
@@ -46,7 +44,6 @@ public class BoardDto{
 
         @NotBlank
         private BoardType boardType;
-
     }
 
     @Getter

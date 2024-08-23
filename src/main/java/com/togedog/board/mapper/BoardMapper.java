@@ -14,18 +14,17 @@ public interface BoardMapper {
     default Board boardDtoPostToBoard(BoardDto.Post requestBody){
         Member member = new Member();
         Board board;
-        if(requestBody.getBoardType() == BoardType.REVIEW) {
+        if (requestBody.getBoardType() == BoardType.REVIEW) {
             board = new BoardReview();
         } else if (requestBody.getBoardType() == BoardType.BOAST) {
             board = new BoardBoast();
         } else if (requestBody.getBoardType() == BoardType.INQUIRY) {
             board = new BoardInquiry();
-        }else if (requestBody.getBoardType() == BoardType.ANNOUNCEMENT){
+        } else if (requestBody.getBoardType() == BoardType.ANNOUNCEMENT){
             board = new BoardAnnouncement();
-        }else {
+        } else {
             board = new Board();
         }
-        member.setMemberId(requestBody.getMemberId());
         board.setTitle(requestBody.getTitle());
         board.setContent(requestBody.getContent());
         board.setContentImg(requestBody.getContentImg());
